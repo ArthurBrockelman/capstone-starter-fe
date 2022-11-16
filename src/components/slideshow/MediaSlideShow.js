@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import tasteDiveGetRelatedMedia from "../../utils/tasteDiveGetRelatedMedia"
 import {tasteDiveResults} from "../../utils/tasteDiveResults"
 import YoutubeEmbed from './YoutubeEmbed';
+import { getUserEmail } from '../../utils/authHelper';
+
 class MediaSlideshow extends Component {
 
     state = {
