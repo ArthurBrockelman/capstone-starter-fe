@@ -12,7 +12,7 @@ class UserMediaGridCards extends Component {
 
     componentDidMount() {
 
-        fetch(`${process.env.REACT_APP_API_URL}/api/media/getAllMedia`)
+        fetch(`${process.env.REACT_APP_API_URL}/api/media/getMediaForUser/${getUserEmail()}`)
             //on success of the fetch request, turn the response that came back into JSON
             .then((response) => response.json())
             //on success of turnig the response into JSON (data we can work with), lets add that data to state
