@@ -23,6 +23,22 @@ class UserMediaGridCards extends Component {
 
     }
 
+    handleFavorite = (event) => {
+
+        console.log(event.target.id)
+        fetch(`${process.env.REACT_APP_API_URL}/api/media/deleteUserMedia?medianame=${event.target.id}&email=${getUserEmail()}`, {
+            method: "DELETE",
+        })
+        fetch(`${process.env.REACT_APP_API_URL}/api/media/getMediaForUser/${getUserEmail()}`)
+            //on success of the fetch request, turn the response that came back into JSON
+            .then((response) => response.json())
+            //on success of turnig the response into JSON (data we can work with), lets add that data to state
+            .then((data) => {
+                console.log(data);
+                this.setState({ data: data })
+            })
+    }
+
     render() {
         if (this.state.data.length !== 0) {
             return (
@@ -37,9 +53,11 @@ class UserMediaGridCards extends Component {
                                         <Card.Text>
                                             Media Rating: {media.mediaRating}
                                         </Card.Text>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fillRule="currentColor" className="bi" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                                        <div><span>Click to delete favorite: </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fillRule="currentColor" className="bi" viewBox="0 0 16 16">
+                                            <path id={media.mediaName} onClick={this.handleFavorite} fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
                                         </svg>
+                                        </div>
                                     </Card.Body>
                                 </Card>
                             </Col>

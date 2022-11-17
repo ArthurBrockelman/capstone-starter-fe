@@ -7,7 +7,9 @@ import NotFound from "./pages/notFound/NotFound";
 import Register from "./pages/register/Register";
 import UpdateUser from "./pages/updateUser/UpdateUser";
 import Analytics from "./pages/analytics/Analytics";
-
+import UserFeed from "./pages/userfeed/UserFeed"
+import Search from "./pages/search/Search";
+import Favorites from "./pages/favorites/Favorites";
 
 function App() {
   return (
@@ -42,6 +44,21 @@ function App() {
           exact
           path="/analytics"
           component={Analytics}
+        />
+        <Route
+          exact
+          path="/userfeed"
+          component={UserFeed}
+        />
+        <Route
+          exact
+          path="/favorites"
+          component={Favorites}
+        />
+        <Route
+          exact
+          path="/search"
+          component={Search}
         />
         <Route
           exact
