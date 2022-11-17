@@ -1,6 +1,6 @@
 import { Switch, Route } from "react-router-dom";
 
-import Home from "./pages/home/Home";
+//import Home from "./pages/home/Home";
 import Protected from "./pages/protected/Protected";
 import Login from "./pages/login/Login";
 import NotFound from "./pages/notFound/NotFound";
@@ -27,7 +27,7 @@ function App() {
         <Route
           exact
           path="/"
-          component={Home}
+          component={Search}
         />
         <Route
           exact

@@ -12,7 +12,7 @@ class Search extends Component {
     state = {
         selectedView: "",
         isAuthenticated: isAuthenticated(),
-        searchTerm: "Hello",
+        searchTerm: "",
         tasteDiveData: [],
         noResults: false,
     }
@@ -20,28 +20,22 @@ class Search extends Component {
     searchSubmit = (event) => {
         
         event.preventDefault()
-        console.log("made it here")
         let searchTerm = event.target.searchTerm.value;
         let tasteDiveResults = [];
 
         fetch(`${process.env.REACT_APP_API_URL}/api/tasteDive/related?MediaName=${searchTerm}`, {
             method: "GET",
         })
-            //on success of the fetch request, turn the response that came back into JSON
             .then((response) => response.json())
-            //on success of turnig the response into JSON (data we can work with), lets add that data to state
             .then((apiData) => {
                 let parsedData = JSON.parse(apiData.body)
-                console.log(parsedData)
                 parsedData.Similar.Results.forEach((result) => {
                     if (result.yID) {
                         tasteDiveResults.push(result)
                     }
 
                 })
-                console.log("tasteDiveData" + tasteDiveResults)
-                this.setState({ tasteDiveData: tasteDiveResults })
-                
+                this.setState({ tasteDiveData: tasteDiveResults })    
                 if(tasteDiveResults.length === 0) {
                     this.setState({noResults: true})
                 } else {
@@ -61,8 +55,7 @@ class Search extends Component {
                 resultCount: this.state.tasteDiveData.length
             })
         })
-        
-        
+    
         this.setState({searchTerm: ""})
         
     }
@@ -70,14 +63,12 @@ class Search extends Component {
     searchOnChange = (event) => {
         this.setState({noResults: false});
         this.setState({ searchTerm: event.target.value })
-
     }
 
     render() {
 
         return (
             <div className="Search">
-
                 <Header isAuthenticated={isAuthenticated()}/>
                 <Container>
                 <Row>

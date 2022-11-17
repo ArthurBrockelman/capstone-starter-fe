@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import React, { Component } from "react";
 import { getUserEmail } from '../../utils/authHelper';
 import YoutubeEmbed from '../slideshow/YoutubeEmbed';
+import getRandomInt from '../../utils/randomInt';
 
 class SearchGridCards extends Component {
 
@@ -23,7 +24,7 @@ class SearchGridCards extends Component {
             body: JSON.stringify({
                 email: getUserEmail(),
                 mediaName: event.target.id,
-                mediaRating: 5,
+                mediaRating: getRandomInt(1, 5),
                 createDateTime: new Date(),
             })
         })

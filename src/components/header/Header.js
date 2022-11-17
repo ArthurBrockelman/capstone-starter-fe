@@ -9,9 +9,6 @@ function Header(props) {
     <div className="Navbar mb-3">
       <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
         <Navbar.Brand as={Link} to="/">Lichentrope</Navbar.Brand>
-        <Nav.Link as={Link} to="/search">
-            Search
-        </Nav.Link>
         <Nav.Link as={Link} to="/userfeed">
             User Feed
         </Nav.Link>
