@@ -1,14 +1,13 @@
 import Header from "../../components/header/Header";
-import Slideshow from "../../components/slideshow/Slideshow";
-import GridCards from "../../components/gridcards/GridCards";
 import { isAuthenticated } from "../../utils/authHelper";
-
+import SelectAndShow from "../../components/selectAndShow/SelectAndShow";
 function Home(props) {
+
   return (
     <div className="Home">
+        
         <Header isAuthenticated={isAuthenticated()} />
-        <Slideshow/>
-        <GridCards/>
+        <SelectAndShow />
     </div>
   );
 }
