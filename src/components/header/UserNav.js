@@ -35,6 +35,8 @@ function UserNav(props) {
       <Nav.Link as={Link} to="/register" href="/register">Register</Nav.Link>
       <NavDropdown title="Analytics" id="basic-nav-dropdown" alignRight>
       <NavDropdown.Item href="UserList">User List</NavDropdown.Item>
+      <NavDropdown.Item href="UserCreationDateCounts">User Creation Date Trends</NavDropdown.Item>
+      <NavDropdown.Item href="UserCreationDateCountsChart">User Creation Date Trends Chart</NavDropdown.Item>
       <NavDropdown.Divider />
       <NavDropdown.Item href="UserFavoriteList">User Favorites List</NavDropdown.Item>
       <NavDropdown.Divider />
@@ -55,6 +57,8 @@ function UserNav(props) {
         <Nav.Link onClick={handleSignOut}>Sign Out</Nav.Link>
         <NavDropdown title="Analytics" id="basic-nav-dropdown" alignRight>
       <NavDropdown.Item href="UserList">User List</NavDropdown.Item>
+      <NavDropdown.Item href="UserCreationDateCounts">User Creation Date Trends</NavDropdown.Item>
+      <NavDropdown.Item href="UserCreationDateCountsChart">User Creation Date Trends Chart</NavDropdown.Item>
       <NavDropdown.Divider />
       <NavDropdown.Item href="UserFavoriteList">User Favorites List</NavDropdown.Item>
       <NavDropdown.Divider />
