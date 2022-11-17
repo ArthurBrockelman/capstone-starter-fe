@@ -10,6 +10,15 @@ import Analytics from "./pages/analytics/Analytics";
 import UserFeed from "./pages/userfeed/UserFeed"
 import Search from "./pages/search/Search";
 import Favorites from "./pages/favorites/Favorites";
+import UserList from "./pages/userlist/UserList";
+import UserFavoriteList from "./pages/userfavoritelist/UserFavoriteList";
+import SearchHistoryList from "./pages/searchhistorylist/SearchHistoryList";
+import MediaRatingCounts from "./pages/mediaratingcounts/MediaRatingCounts";
+import MediaRatingCountsChart from "./pages/mediaratingcountschart/MediaRatingCountsChart";
+import UserFavoriteRatingChart from "./pages/userfavoriteratingchart/UserFavoriteRatingChart";
+import UserList2 from "./pages/userlist2/UserList2";
+
+
 
 function App() {
   return (
@@ -59,6 +68,41 @@ function App() {
           exact
           path="/search"
           component={Search}
+        />
+        <Route
+          exact
+          path="/userlist"
+          component={UserList}
+        />
+          <Route
+          exact
+          path="/userfavoritelist"
+          component={UserFavoriteList}
+        />
+          <Route
+          exact
+          path="/searchhistorylist"
+          component={SearchHistoryList}
+        />
+         <Route
+          exact
+          path="/mediaratingcounts"
+          component={MediaRatingCounts}
+        />
+        <Route
+          exact
+          path="/mediaratingcountschart"
+          component={MediaRatingCountsChart}
+        />
+          <Route
+          exact
+          path="/userfavoriteratingchart"
+          component={UserFavoriteRatingChart}
+        />
+        <Route
+          exact
+          path="/userlist2"
+          component={UserList2}
         />
         <Route
           exact
