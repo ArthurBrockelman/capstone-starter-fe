@@ -1,12 +1,15 @@
 import { Switch, Route } from "react-router-dom";
 
-import Home from "./pages/home/Home";
+//import Home from "./pages/home/Home";
 import Protected from "./pages/protected/Protected";
 import Login from "./pages/login/Login";
 import NotFound from "./pages/notFound/NotFound";
 import Register from "./pages/register/Register";
 import UpdateUser from "./pages/updateUser/UpdateUser";
 import Analytics from "./pages/analytics/Analytics";
+import UserFeed from "./pages/userfeed/UserFeed"
+import Search from "./pages/search/Search";
+import Favorites from "./pages/favorites/Favorites";
 import UserList from "./pages/userlist/UserList";
 import UserFavoriteList from "./pages/userfavoritelist/UserFavoriteList";
 import SearchHistoryList from "./pages/searchhistorylist/SearchHistoryList";
@@ -26,7 +29,7 @@ function App() {
         <Route
           exact
           path="/"
-          component={Home}
+          component={Search}
         />
         <Route
           exact
@@ -52,6 +55,21 @@ function App() {
           exact
           path="/analytics"
           component={Analytics}
+        />
+        <Route
+          exact
+          path="/userfeed"
+          component={UserFeed}
+        />
+        <Route
+          exact
+          path="/favorites"
+          component={Favorites}
+        />
+        <Route
+          exact
+          path="/search"
+          component={Search}
         />
         <Route
           exact
