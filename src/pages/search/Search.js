@@ -72,6 +72,10 @@ class Search extends Component {
                 <Header isAuthenticated={isAuthenticated()}/>
                 <Container>
                 <Row>
+                    <h1>Search for Music</h1>
+                    <p>Find new artists by searching Lichentrope, add artists to your favorites to be provided with a feed of random videos based off your selections.</p>
+                </Row>
+                <Row>
                     <SearchBar handleSubmit={this.searchSubmit} onChange={this.searchOnChange} searchTerm={this.state.searchTerm} />
                 </Row>
                 <Row>
@@ -79,6 +83,9 @@ class Search extends Component {
                 </Row>
                 <Row>
                     {this.state.tasteDiveData.length !== 0 ? <SearchGridCards searchData={this.state.tasteDiveData} /> : null}
+                </Row>
+                <Row>
+                    <img src="/images/Lichen-2.jpg" height="100%" width="100%" alt="lichen"></img>
                 </Row>
                 </Container>
             </div>
