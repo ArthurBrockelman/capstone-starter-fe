@@ -15,6 +15,8 @@ import UserFavoriteList from "./pages/userfavoritelist/UserFavoriteList";
 import SearchHistoryList from "./pages/searchhistorylist/SearchHistoryList";
 import MediaRatingCounts from "./pages/mediaratingcounts/MediaRatingCounts";
 import MediaRatingCountsChart from "./pages/mediaratingcountschart/MediaRatingCountsChart";
+import MediaNameCounts from "./pages/medianamecounts/MediaNameCounts";
+import MediaNameCountsChart from "./pages/medianamecountschart/MediaNameCountsChart";
 import UserFavoriteRatingChart from "./pages/userfavoriteratingchart/UserFavoriteRatingChart";
 import UserCreationDateCounts from "./pages/usercreationdatecounts/UserCreationDateCounts";
 import UserCreationDateCountsChart from "./pages/usercreationdatecountschart/UserCreationDateCountsChart";
@@ -95,6 +97,16 @@ function App() {
           exact
           path="/searchhistorylist"
           component={SearchHistoryList}
+        />
+        <Route
+          exact
+          path="/medianamecounts"
+          component={MediaNameCounts}
+        />
+        <Route
+          exact
+          path="/medianamecountschart"
+          component={MediaNameCountsChart}
         />
          <Route
           exact
